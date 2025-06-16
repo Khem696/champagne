@@ -1,0 +1,234 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-width: 100vw;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body, .home-wrapper {
+  background: #fff;
+  font-family: 'Georgia', serif;
+}
+
+.home-wrapper {
+  width: 100vw;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-content {
+  width: 100vw;
+  min-width: 100vw;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+  background: #4b2326;
+  color: #fff;
+  text-align: center;
+  padding: 2.5rem 0 2rem 0;
+  position: relative;
+  width: 100vw;
+  min-width: 100vw;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-bg {
+  min-height: 220px;
+  background: url('/public/hero-placeholder.jpg') center/cover no-repeat;
+  opacity: 0.3;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+}
+.hero-text {
+  position: relative;
+  z-index: 2;
+  padding: 2.5rem 0 1.5rem 0;
+}
+.hero-text h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.2rem;
+}
+.hero-slide {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Products Section */
+.products-section {
+  background: #fff1f3;
+  padding: 2.5rem 0 2rem 0;
+  text-align: center;
+  width: 100vw;
+  min-width: 100vw;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.products-title {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 2.2rem;
+}
+.products-row {
+  width: 100vw;
+  min-width: 100vw;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 4rem;
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-img {
+  width: 180px;
+  height: 80px;
+  background: #4b2326;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 16px #0002;
+}
+.product-label {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: #4b2326;
+}
+
+/* Details Section */
+.details-section {
+  background: #fff;
+  padding: 0;
+  width: 100vw;
+  min-width: 100vw;
+  margin: 0;
+}
+.details-row {
+  width: 100vw;
+  min-width: 100vw;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 2.5rem;
+}
+.details-row.reverse {
+  flex-direction: row-reverse;
+  background: #fff1f3;
+}
+.details-img {
+  width: 260px;
+  height: 110px;
+  background: #4b2326;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px #0002;
+}
+.details-text {
+  max-width: 400px;
+  text-align: left;
+}
+.details-text h3 {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  color: #4b2326;
+  margin-bottom: 1rem;
+}
+.details-text h3.pink {
+  color: #b03a7a;
+}
+.details-text p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+.see-more {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #181313;
+  margin-top: 0.5rem;
+}
+
+/* Badges Section */
+.badges-section {
+  background: #fff;
+  padding: 3rem 0 2.5rem 0;
+  text-align: center;
+  width: 100vw;
+  min-width: 100vw;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.badges-row {
+  width: 100vw;
+  min-width: 100vw;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 4rem;
+}
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.badge-icon {
+  width: 100px;
+  height: 100px;
+  background: #fbe7ef;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.badge-label {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: #4b2326;
+}
+
+/* Utility */
+.placeholder-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  background: repeating-linear-gradient(135deg, #4b2326 0 10px, #fff1f3 10px 20px);
+}
+
+@media (max-width: 900px) {
+  .products-row, .badges-row, .details-row {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100vw;
+    min-width: 100vw;
+  }
+  .details-row, .details-row.reverse {
+    flex-direction: column;
+    padding: 2rem 0;
+    width: 100vw;
+    min-width: 100vw;
+  }
+} 
