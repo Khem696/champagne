@@ -1,6 +1,21 @@
 import { useState, useEffect } from 'react';
 import './AllProduct.css';
 
+const productDetails = [
+    {
+        id: 1,
+        title: "CHAMPAGNE FLUTE",
+        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.",
+        image: "/champagne/images/product-image.png", 
+    },
+    {
+        id: 2,
+        title: "CHAMPAGE FAT",
+        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.",
+        image: "/champagne/images/product-image.png",
+    }
+];
+
 const AllProduct = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -14,7 +29,7 @@ const AllProduct = () => {
                 "Lorem ipsum",
                 "Lorem ipsum"
             ],
-            image: "/images/champagne-flute.png" // Replace with actual image path
+            image: "/champagne/images/champagne-flute.png"
         },
         {
             id: 2,
@@ -24,7 +39,7 @@ const AllProduct = () => {
                 "Lorem ipsum",
                 "Lorem ipsum"
             ],
-            image: "/images/champagne-fat.png" // Replace with actual image path
+            image: "/champagne/images/champagne-fat.png"
         }
     ];
 
@@ -114,6 +129,53 @@ const AllProduct = () => {
                         </div>
                     ))}
                 </div>
+            </section>
+
+            {/* Product Details Section */}
+            <section className="product-details-section">
+                {productDetails.map((product, idx) => {
+                    const isEven = idx % 2 === 0;
+                    return (
+                        <div key={product.id} className="product-detail-row split-row">
+                            {/* Left Half */}
+                            <div className={`left-half ${isEven ? 'bg-burgundy' : 'bg-pink'}`}>
+                                {isEven ? (
+                                    <div className="product-detail-image-container">
+                                        <img
+                                            src={product.image}
+                                            alt={product.title}
+                                            className="product-detail-image"
+                                        />
+                                    </div>
+                                ) : (
+                                    <div className="product-detail-content">
+                                        <h2 className="product-detail-title">{product.title}</h2>
+                                        <p className="product-detail-description">{product.description}</p>
+                                        <a href="#" className="see-more-link">see more!</a>
+                                    </div>
+                                )}
+                            </div>
+                            {/* Right Half */}
+                            <div className="right-half bg-white">
+                                {isEven ? (
+                                    <div className="product-detail-content">
+                                        <h2 className="product-detail-title">{product.title}</h2>
+                                        <p className="product-detail-description">{product.description}</p>
+                                        <a href="#" className="see-more-link">see more!</a>
+                                    </div>
+                                ) : (
+                                    <div className="product-detail-image-container">
+                                        <img
+                                            src={product.image}
+                                            alt={product.title}
+                                            className="product-detail-image"
+                                        />
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    );
+                })}
             </section>
         </div>
     );
