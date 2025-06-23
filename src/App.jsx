@@ -36,7 +36,7 @@ const PublicLayout = () => (
 function App() {
     return (
         <AuthProvider>
-            <Router>
+            <Router basename="/champagne">
                 <Suspense fallback={
                     <div className="loading-screen">
                         <div className="loading-spinner"></div>
