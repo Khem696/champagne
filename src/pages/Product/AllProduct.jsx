@@ -97,7 +97,6 @@ const AllProduct = () => {
 
                     {/* Slider Navigation */}
                     <div className="slider-navigation">
-                        <span className="slide-text">(slide)</span>
                         <div className="slider-dots">
                             {sliderContent.map((_, index) => (
                                 <button
