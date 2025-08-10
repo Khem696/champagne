@@ -21,9 +21,12 @@ const Home = () => (
                     <div className="product-img placeholder-img" />
                     <div className="product-label">Champagne Flute</div>
                 </div>
+                <div className="product-seperator">
+                    <div className="product-img placeholder-img" />
+                </div>
                 <div className="product-card">
                     <div className="product-img placeholder-img" />
-                    <div className="product-label">Champagne Fat</div>
+                    <div className="product-label">Champagne Coupe</div>
                 </div>
             </div>
         </section>
@@ -40,7 +43,7 @@ const Home = () => (
             </div>
             <div className="details-row reverse">
                 <div className="details-text">
-                    <h3 className="pink">CHAMPAGE FAT</h3>
+                    <h3 className="pink">CHAMPAGE COUPE</h3>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo</p>
                     <div className="see-more">see more!</div>
                 </div>

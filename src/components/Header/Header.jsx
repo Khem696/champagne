@@ -26,7 +26,7 @@ const Header = () => {
               to="/"
               className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
               onClick={() => setMenuOpen(false)}>
-              Home
+              HOME
             </NavLink>
           </li>
           <li className="nav-item">
@@ -34,7 +34,7 @@ const Header = () => {
               to="/products"
               className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
               onClick={() => setMenuOpen(false)}>
-              Champagne Products
+              CHAMPAGNE PRODUCTS
             </NavLink>
           </li>
           <li className="nav-item">
@@ -42,7 +42,7 @@ const Header = () => {
               to="/about"
               className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
               onClick={() => setMenuOpen(false)}>
-              About Us
+              ABOUT CHAMPAGNE
             </NavLink>
           </li>
           <li className="nav-item">
@@ -50,7 +50,7 @@ const Header = () => {
               to="/contact"
               className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
               onClick={() => setMenuOpen(false)}>
-              Contact Us
+              CONTACT US
             </NavLink>
           </li>
         </ul>

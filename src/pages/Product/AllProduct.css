@@ -12,7 +12,7 @@
 /* Hero Section Styles */
 .product-page .hero-section {
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -114,56 +114,122 @@
 
 /* Slider Navigation */
 .product-page .slider-navigation {
-    margin-top: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.product-page .slide-text {
-    font-size: 1.6rem;
-    color: #5C1F1F;
-    text-transform: lowercase;
-    font-style: italic;
-    letter-spacing: 1px;
-}
-
-.product-page .slider-dots {
-    display: flex;
-    gap: 1.5rem;
-    padding: 1rem;
-}
-
-.product-page .slider-dot {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: transparent;
-    border: 2.5px solid #5C1F1F;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    padding: 0;
-    outline: none;
-}
-
-.product-page .slider-dot::after {
-    content: '';
     position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border-radius: 50%;
-    border: 1px solid rgba(92, 31, 31, 0.3);
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
     pointer-events: none;
 }
 
-.product-page .slider-dot.active {
-    background: #5C1F1F;
+.product-page .slider-arrows {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.product-page .slider-arrow {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: transparent;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    position: relative;
+    pointer-events: auto;
+}
+
+/* Create outline chevron arrows using CSS lines */
+.product-page .prev-arrow::before {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 3.4px;
+    background: #FFFFFF;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transform-origin: left center;
+}
+
+.product-page .prev-arrow::after {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 3.4px;
+    background: #FFFFFF;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transform-origin: left center;
+}
+
+.product-page .next-arrow::before {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 3.4px;
+    background: #FFFFFF;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transform-origin: right center;
+}
+
+.product-page .next-arrow::after {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 3.4px;
+    background: #FFFFFF;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transform-origin: right center;
+}
+
+.product-page .slider-arrow:hover {
+    background: transparent;
+    color: transparent;
     transform: scale(1.1);
-    box-shadow: 0 0 0 2px #FFE6E6, 0 0 0 4px rgba(92, 31, 31, 0.5);
+}
+
+.product-page .slider-arrow:hover::before {
+    background: #FFFFFF;
+}
+
+.product-page .slider-arrow:hover::after {
+    background: #FFFFFF;
+}
+
+.product-page .slider-arrow:active {
+    transform: scale(0.95);
+}
+
+.product-page .slider-arrow:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.product-page .slider-arrow:focus-visible {
+    outline: none;
+    border: none;
+    box-shadow: none;
 }
 
 /* Products Section */
@@ -288,6 +354,17 @@
         width: 200px;
         height: 200px;
     }
+
+    .product-page .slider-arrow {
+        font-size: 1.5rem;
+        padding: 0;
+        width: 60px;
+        height: 60px;
+    }
+
+    .product-page .slider-navigation {
+        padding: 0 1rem;
+    }
 }
 
 /* --- Product Details Section (Alternating Rows) --- */
@@ -297,6 +374,7 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
 .product-detail-row {
     display: flex;
     flex-direction: row;
@@ -370,13 +448,16 @@
         left: 0;
         transform: none;
     }
+    
     .product-detail-row {
         flex-direction: column;
     }
+    
     .left-half, .right-half {
         flex: 1;
         width: 100%;
     }
+    
     .product-detail-image {
         width: 220px;
     }
@@ -388,6 +469,7 @@
     width: 100%;
     min-height: 400px;
 }
+
 .left-half, .right-half {
     flex: 1;
     display: flex;
@@ -396,12 +478,15 @@
     padding: 3rem 2rem;
     box-sizing: border-box;
 }
+
 .bg-burgundy {
     background: #5C1F1F;
 }
+
 .bg-pink {
     background: #FFE6E6;
 }
+
 .bg-white {
     background: #fff;
 }
@@ -436,10 +521,12 @@
     .split-row {
         flex-direction: column;
     }
+    
     .left-half, .right-half {
         flex: 1;
         width: 100%;
     }
+    
     .product-detail-image {
         width: 220px;
     }

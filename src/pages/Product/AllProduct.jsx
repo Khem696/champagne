@@ -6,7 +6,7 @@ const productDetails = [
         id: 1,
         title: "CHAMPAGNE FLUTE",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.",
-        image: "/champagne/images/product-image.png", 
+        image: "/champagne/images/product-image.png",
     },
     {
         id: 2,
@@ -46,7 +46,7 @@ const AllProduct = () => {
     // Auto-slide functionality
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentSlide((prev) => 
+            setCurrentSlide((prev) =>
                 prev === sliderContent.length - 1 ? 0 : prev + 1
             );
         }, 5000); // Change slide every 5 seconds
@@ -54,8 +54,16 @@ const AllProduct = () => {
         return () => clearInterval(timer);
     }, []);
 
-    const handleDotClick = (index) => {
-        setCurrentSlide(index);
+    const handlePrevSlide = () => {
+        setCurrentSlide((prev) =>
+            prev === 0 ? sliderContent.length - 1 : prev - 1
+        );
+    };
+
+    const handleNextSlide = () => {
+        setCurrentSlide((prev) =>
+            prev === sliderContent.length - 1 ? 0 : prev + 1
+        );
     };
 
     return (
@@ -64,7 +72,7 @@ const AllProduct = () => {
             <section className="hero-section">
                 <div className="hero-content">
                     <h1 className="new-available">NEW AVAILABLE!</h1>
-                    
+
                     <div className="split-content">
                         <div className="left-content">
                             <h2>{sliderContent[currentSlide].title}</h2>
@@ -77,8 +85,8 @@ const AllProduct = () => {
 
                         <div className="center-content">
                             <div className="product-image-container">
-                                <img 
-                                    src={sliderContent[currentSlide].image} 
+                                <img
+                                    src={sliderContent[currentSlide].image}
                                     alt={sliderContent[currentSlide].title}
                                     className="product-image"
                                 />
@@ -97,15 +105,19 @@ const AllProduct = () => {
 
                     {/* Slider Navigation */}
                     <div className="slider-navigation">
-                        <div className="slider-dots">
-                            {sliderContent.map((_, index) => (
-                                <button
-                                    key={index}
-                                    className={`slider-dot ${currentSlide === index ? 'active' : ''}`}
-                                    onClick={() => handleDotClick(index)}
-                                    aria-label={`Go to slide ${index + 1}`}
-                                />
-                            ))}
+                        <div className="slider-arrows">
+                            <button
+                                className="slider-arrow prev-arrow"
+                                onClick={handlePrevSlide}
+                                aria-label="Previous slide"
+                            >
+                            </button>
+                            <button
+                                className="slider-arrow next-arrow"
+                                onClick={handleNextSlide}
+                                aria-label="Next slide"
+                            >
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -118,8 +130,8 @@ const AllProduct = () => {
                     {sliderContent.map((product) => (
                         <div key={product.id} className="product-display">
                             <div className="product-image-stand">
-                                <img 
-                                    src={product.image} 
+                                <img
+                                    src={product.image}
                                     alt={product.title}
                                     className="product-image"
                                 />
