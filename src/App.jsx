@@ -36,7 +36,7 @@ const PublicLayout = () => (
 function App() {
     return (
         <AuthProvider>
-            <Router basename="/champagne">
+            <Router basename={process.env.NODE_ENV === 'production' ? '/champagne' : '/'}>
                 <Suspense fallback={
                     <div className="loading-screen">
                         <div className="loading-spinner"></div>

@@ -32,6 +32,32 @@
   --text-3xl: 1.875rem; /* 30px */
   --text-4xl: 2.25rem;  /* 36px */
 
+  /* Enhanced Typography Properties */
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.2;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.8;
+
+  /* Font Weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* Text Shadows for Enhanced Readability */
+  --text-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --text-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --text-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --text-shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.2);
+
   /* Responsive Breakpoints */
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -52,6 +78,113 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  /* Global Font Family - This ensures ALL pages use the same font */
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: var(--line-height-relaxed);
+  color: #333;
+}
+
+/* Global Typography Enhancements - These apply to ALL pages */
+h1, .h1, 
+h2, .h2, 
+h3, .h3, 
+h4, .h4, 
+h5, .h5, 
+h6, .h6 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: var(--line-height-normal);
+  font-weight: var(--font-semibold);
+  text-shadow: var(--text-shadow-sm);
+}
+
+/* Enhanced Typography with Global Consistency */
+h1, .h1 { 
+  font-size: var(--text-4xl);
+  line-height: var(--line-height-tight);
+  text-shadow: var(--text-shadow-md);
+}
+h2, .h2 { 
+  font-size: var(--text-3xl);
+  line-height: var(--line-height-normal);
+  text-shadow: var(--text-shadow-sm);
+}
+h3, .h3 { 
+  font-size: var(--text-2xl);
+  line-height: var(--line-height-normal);
+  text-shadow: var(--text-shadow-sm);
+}
+h4, .h4 { 
+  font-size: var(--text-xl);
+  line-height: var(--line-height-normal);
+}
+h5, .h5 { 
+  font-size: var(--text-lg);
+  line-height: var(--line-height-relaxed);
+}
+h6, .h6 { 
+  font-size: var(--text-base);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Global Text Enhancement Classes - Use these for consistent styling */
+.text-enhanced {
+  text-shadow: var(--text-shadow-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+.text-title {
+  font-weight: var(--font-semibold);
+  line-height: var(--line-height-normal);
+  text-shadow: var(--text-shadow-md);
+  letter-spacing: var(--tracking-wide);
+}
+
+.text-heading {
+  font-weight: var(--font-semibold);
+  line-height: var(--line-height-normal);
+  text-shadow: var(--text-shadow-sm);
+}
+
+.text-body {
+  line-height: var(--line-height-relaxed);
+  text-shadow: var(--text-shadow-sm);
+}
+
+.text-link {
+  transition: all 0.3s ease;
+  text-shadow: var(--text-shadow-sm);
+}
+
+.text-link:hover {
+  text-shadow: var(--text-shadow-md);
+}
+
+/* Responsive Typography Adjustments */
+@media (max-width: 768px) {
+  h1, .h1 { 
+    font-size: var(--text-3xl);
+    line-height: var(--line-height-tight);
+  }
+  h2, .h2 { 
+    font-size: var(--text-2xl);
+    line-height: var(--line-height-normal);
+  }
+  h3, .h3 { 
+    font-size: var(--text-xl);
+    line-height: var(--line-height-normal);
+  }
+  h4, .h4 { 
+    font-size: var(--text-lg);
+    line-height: var(--line-height-relaxed);
+  }
+  h5, .h5 { 
+    font-size: var(--text-base);
+    line-height: var(--line-height-relaxed);
+  }
+  h6, .h6 { 
+    font-size: var(--text-sm);
+    line-height: var(--line-height-relaxed);
+  }
 }
 
 /* Container System */
@@ -76,24 +209,7 @@ body {
 }
 
 @media (min-width: 1200px) {
-  .container { max-width: 1140px; }
-}
-
-/* Responsive Typography */
-h1, .h1 { font-size: var(--text-4xl); }
-h2, .h2 { font-size: var(--text-3xl); }
-h3, .h3 { font-size: var(--text-2xl); }
-h4, .h4 { font-size: var(--text-xl); }
-h5, .h5 { font-size: var(--text-lg); }
-h6, .h6 { font-size: var(--text-base); }
-
-@media (max-width: 768px) {
-  h1, .h1 { font-size: var(--text-3xl); }
-  h2, .h2 { font-size: var(--text-2xl); }
-  h3, .h3 { font-size: var(--text-xl); }
-  h4, .h4 { font-size: var(--text-lg); }
-  h5, .h5 { font-size: var(--text-base); }
-  h6, .h6 { font-size: var(--text-sm); }
+  .container { max-width: 1200px; }
 }
 
 /* Responsive Grid System */

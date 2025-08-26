@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { IMAGES } from '../../utils/imageUtils';
 import './AllProduct.css';
 
 const productDetails = [
@@ -6,13 +7,13 @@ const productDetails = [
         id: 1,
         title: "CHAMPAGNE FLUTE",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.",
-        image: "/champagne/images/product-image.png",
+        image: IMAGES.PRODUCT_IMAGE,
     },
     {
         id: 2,
         title: "CHAMPAGE FAT",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.",
-        image: "/champagne/images/product-image.png",
+        image: IMAGES.PRODUCT_IMAGE,
     }
 ];
 
@@ -29,17 +30,17 @@ const AllProduct = () => {
                 "Lorem ipsum",
                 "Lorem ipsum"
             ],
-            image: "/champagne/images/champagne-flute.png"
+            image: IMAGES.CHAMPAGNE_FLUTE
         },
         {
             id: 2,
-            title: "CHAMPAGE FAT",
+            title: "CHAMPAGE COUPE",
             description: [
                 "Lorem ipsum",
                 "Lorem ipsum",
                 "Lorem ipsum"
             ],
-            image: "/champagne/images/champagne-fat.png"
+            image: IMAGES.CHAMPAGNE_COUPE
         }
     ];
 
