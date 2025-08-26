@@ -377,7 +377,23 @@ tr:hover {
   display: none;
 }
 
+/* Large Tablet Styles */
 @media (max-width: 1024px) {
+  .admin-layout {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .admin-sidebar {
+    width: 220px;
+    padding: 1rem;
+  }
+
+  .admin-content {
+    padding: 1.5rem;
+    margin-left: 220px;
+    width: calc(100% - 220px);
+  }
+
   .mobile-menu-toggle {
     display: block !important;
     position: fixed;
@@ -405,6 +421,19 @@ tr:hover {
 
   .admin-content {
     padding-top: 4rem; /* Add space for the mobile menu button */
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.25rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.6rem;
   }
 }
 
@@ -456,21 +485,29 @@ tr:hover {
   }
 }
 
+/* Small Mobile Styles */
 @media (max-width: 480px) {
   .admin-content {
     padding: 0.75rem;
+    margin-left: 0;
+    width: 100%;
   }
 
   .page-header {
     margin-bottom: 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
   }
 
   .page-header h1 {
     font-size: 1.25rem;
+    text-align: center;
   }
 
   .stat-card {
     padding: 1rem;
+    text-align: center;
   }
 
   .login-container {
@@ -478,13 +515,26 @@ tr:hover {
     padding: 1rem;
   }
 
+  .admin-login-box {
+    padding: 1.5rem;
+  }
+
+  /* Table improvements for small mobile */
+  .events-list,
+  .products-list {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   table {
     font-size: 0.85rem;
+    min-width: 600px; /* Maintain table structure */
   }
 
   td, th {
     padding: 0.5rem;
     min-width: 100px;
+    white-space: nowrap;
   }
 
   .form-group {
@@ -493,6 +543,125 @@ tr:hover {
 
   .form-group label {
     font-size: 0.9rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.625rem;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+
+  /* Button improvements */
+  .add-button, 
+  .edit-button, 
+  .delete-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    min-height: 40px;
+  }
+
+  /* Products list responsive */
+  .products-list {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .product-item {
+    margin: 0;
+  }
+
+  .product-details {
+    padding: 1rem;
+  }
+
+  /* Popup improvements */
+  .popup-content {
+    width: 95%;
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  .popup-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cancel-button,
+  .submit-button {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .admin-content {
+    padding: 0.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.1rem;
+  }
+
+  .stat-card {
+    padding: 0.75rem;
+  }
+
+  .login-container,
+  .admin-login-box {
+    margin: 0.25rem;
+    padding: 1rem;
+  }
+
+  table {
+    font-size: 0.8rem;
+    min-width: 500px;
+  }
+
+  td, th {
+    padding: 0.375rem;
+    min-width: 80px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.5rem;
+    font-size: 16px;
+  }
+
+  .add-button, 
+  .edit-button, 
+  .delete-button {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8rem;
+    min-height: 36px;
+  }
+
+  .popup-content {
+    width: 98%;
+    padding: 0.75rem;
+    margin: 0.25rem;
+  }
+
+  .popup-header h2 {
+    font-size: 1rem;
+  }
+
+  .admin-menu a,
+  .admin-menu button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .sidebar-header h2 {
+    font-size: 1.25rem;
   }
 }
 

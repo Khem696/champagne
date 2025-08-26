@@ -87,14 +87,147 @@
   text-align: center;
 }
 
-@media (max-width: 900px) {
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .about-hero {
+    height: 220px;
+  }
+
+  .about-content {
+    padding: 3rem 2rem 5rem 2rem;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .about-desc {
+    max-width: 600px;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .about-photos {
+    gap: 2rem;
+  }
+
+  .about-photo {
+    width: 200px;
+    height: 240px;
+    font-size: 1.4rem;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .about-hero {
+    height: 180px;
+  }
+
+  .about-content {
+    padding: 2.5rem 1.5rem 4rem 1.5rem;
+    min-height: 350px;
+  }
+
+  .about-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1.5px;
+  }
+
+  .about-desc {
+    max-width: 500px;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 1.5px;
+  }
+
   .about-photos {
     flex-direction: column;
     gap: 1.5rem;
     align-items: center;
   }
+
   .about-photo {
-    width: 80vw;
-    height: 180px;
+    width: 75vw;
+    max-width: 300px;
+    height: 200px;
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .about-hero {
+    height: 150px;
+  }
+
+  .about-content {
+    padding: 2rem 1rem 3rem 1rem;
+    min-height: 300px;
+  }
+
+  .about-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .about-desc {
+    max-width: 100%;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    padding: 0 0.5rem;
+  }
+
+  .about-photos {
+    gap: 1.2rem;
+  }
+
+  .about-photo {
+    width: 85vw;
+    max-width: 280px;
+    height: 160px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .about-hero {
+    height: 130px;
+  }
+
+  .about-content {
+    padding: 1.5rem 0.75rem 2.5rem 0.75rem;
+  }
+
+  .about-title {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.8px;
+  }
+
+  .about-desc {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.8px;
+    padding: 0 0.25rem;
+  }
+
+  .about-photos {
+    gap: 1rem;
+  }
+
+  .about-photo {
+    width: 90vw;
+    max-width: 250px;
+    height: 140px;
+    font-size: 1rem;
+    letter-spacing: 0.8px;
   }
 } 

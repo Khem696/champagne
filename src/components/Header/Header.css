@@ -1,7 +1,7 @@
 .header {
   background: #4b2326;
   padding: 1rem 0;
-  border-bottom: 2px solid #fff1f3;
+  /* border-bottom: 2px solid #fff1f3; */
   width: 100%;
   position: relative;
   z-index: 1000;
@@ -88,10 +88,35 @@
   transition: all 0.3s ease;
 }
 
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 1.5rem;
+  }
+
+  .nav-item {
+    margin-left: 2rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .mobile-menu-btn {
+    left: 1.5rem;
+  }
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
+  .header {
+    padding: 0.75rem 0;
+  }
+
   .navbar {
-    /* This rule is no longer needed as the base style is now centered. */
+    padding: 0 1rem;
+    justify-content: center;
+    position: relative;
   }
 
   .nav-list {
@@ -101,7 +126,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.95);
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -109,6 +134,7 @@
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     transform: translateY(-100%);
     opacity: 0;
+    z-index: 1100;
   }
 
   .nav-list.nav-open {
@@ -124,14 +150,17 @@
   }
 
   .nav-link {
-    font-size: 1.5rem;
-    padding: 0.5rem 0;
+    font-size: 1.3rem;
+    padding: 0.75rem 0;
     display: block;
     width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .mobile-menu-btn {
     display: flex;
+    left: 1rem;
+    z-index: 1200;
   }
 
   .mobile-menu-btn.active .hamburger-line:nth-child(1) {
@@ -145,10 +174,64 @@
   .mobile-menu-btn.active .hamburger-line:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
   }
+}
 
-  .mobile-menu-btn.active .menu-text {
-    /* Optionally hide text when menu is open */
-    /* opacity: 0; */
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem 0;
+  }
+
+  .navbar {
+    padding: 0 0.75rem;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+  }
+
+  .mobile-menu-btn {
+    left: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .hamburger-icon {
+    width: 25px;
+    height: 18px;
+  }
+
+  .hamburger-line {
+    height: 2.5px;
+  }
+
+  .nav-list {
+    padding: 1.5rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .navbar {
+    padding: 0 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .mobile-menu-btn {
+    left: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hamburger-icon {
+    width: 22px;
+    height: 16px;
+  }
+
+  .nav-list {
+    padding: 1rem;
   }
 }
 
