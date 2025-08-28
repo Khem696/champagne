@@ -342,8 +342,9 @@ body, .home-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* padding: 3.933rem 3.146rem; */
-    padding: var(--space-xl) var(--space-lg);
+    /* Remove padding from halves - let children handle their own spacing */
+    padding: 0;
+    background: transparent;
 }
 
 .product-detail-image-container {
@@ -351,6 +352,11 @@ body, .home-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
+    min-height: 614px;
+    padding: var(--space-xl) var(--space-lg);
+    box-sizing: border-box;
 }
 
 .product-detail-image {
@@ -365,8 +371,12 @@ body, .home-wrapper {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    /* padding: 2rem; */
-    padding: var(--space-lg);
+    width: 100%;
+    height: 100%;
+    min-height: 614px;
+    padding: var(--space-xl) var(--space-lg);
+    box-sizing: border-box;
+    /* Remove default background - let classes handle it */
 }
 
 .product-detail-title {
@@ -418,13 +428,41 @@ body, .home-wrapper {
     background: #fff;
 }
 
+/* Ensure image containers with backgrounds fill the space */
+.product-detail-image-container.bg-burgundy,
+.product-detail-image-container.bg-pink {
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensure content areas with white background fill the space */
+.product-detail-content.bg-white {
+    width: 100%;
+    height: 100%;
+    background: #fff !important;
+    color: #333;
+}
+
+/* White background content styling */
+.product-detail-content.bg-white .product-detail-title {
+    color: #5C1F1F;
+}
+
+.product-detail-content.bg-white .product-detail-description {
+    color: #333;
+}
+
+.product-detail-content.bg-white .see-more-link {
+    color: #5C1F1F;
+}
+
 .left-half .product-detail-content,
 .right-half .product-detail-content {
     align-items: flex-start;
     text-align: left;
 }
 
-.left-half.bg-burgundy .product-detail-content,
+/* .left-half.bg-burgundy .product-detail-content,
 .right-half.bg-burgundy .product-detail-content {
     color: #fff;
 }
@@ -432,16 +470,26 @@ body, .home-wrapper {
 .left-half.bg-pink .product-detail-content,
 .right-half.bg-pink .product-detail-content {
     color: #5C1F1F;
-}
+} */
 
 .left-half.bg-burgundy .product-detail-title,
 .right-half.bg-burgundy .product-detail-title {
-    color: #fff;
+    color: #5C1F1F;
 }
 
 .left-half.bg-pink .product-detail-title,
 .right-half.bg-pink .product-detail-title {
     color: #5C1F1F;
+}
+
+.left-half.bg-pink .product-detail-image-container,
+.right-half.bg-pink .product-detail-image-container {
+    background: #FFE6E6;
+}
+
+.left-half.bg-burgundy .product-detail-image-container,
+.right-half.bg-burgundy .product-detail-image-container {
+    background: #5C1F1F;
 }
 
 /* Badges Section */
@@ -706,7 +754,7 @@ body, .home-wrapper {
   .left-half, .right-half {
     flex: 1;
     width: 100%;
-    padding: var(--space-md) var(--space-sm);
+    padding: 0; /* Keep consistent with main rule */
   }
   
   .product-detail-image {
@@ -855,7 +903,7 @@ body, .home-wrapper {
   }
   
   .left-half, .right-half {
-    padding: var(--space-sm) var(--space-xs);
+    padding: 0; /* Keep consistent with main rule */
   }
   
   .product-detail-image {

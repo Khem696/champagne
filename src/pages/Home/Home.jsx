@@ -131,7 +131,7 @@ const Home = () => {
                     },
                     {
                         id: 2,
-                        title: "CHAMPAGE COUPE",
+                        title: "CHAMPAGNE COUPE",
                         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.",
                         image: IMAGES.CHAMPAGNE_COUPE
                     }
@@ -140,9 +140,9 @@ const Home = () => {
                     return (
                         <div key={product.id} className="product-detail-row split-row">
                             {/* Left Half */}
-                            <div className={`left-half ${isEven ? 'bg-burgundy' : 'bg-pink'}`}>
+                            <div className="left-half">
                                 {isEven ? (
-                                    <div className="product-detail-image-container">
+                                    <div className={`product-detail-image-container ${isEven ? 'bg-burgundy' : 'bg-pink'}`}>
                                         <img
                                             src={product.image}
                                             alt={product.title}
@@ -150,7 +150,7 @@ const Home = () => {
                                         />
                                     </div>
                                 ) : (
-                                    <div className="product-detail-content">
+                                    <div className="product-detail-content bg-white">
                                         <h2 className="product-detail-title">{product.title}</h2>
                                         <p className="product-detail-description">{product.description}</p>
                                         <a href="#" className="see-more-link">see more!</a>
@@ -158,15 +158,15 @@ const Home = () => {
                                 )}
                             </div>
                             {/* Right Half */}
-                            <div className="right-half bg-white">
+                            <div className="right-half">
                                 {isEven ? (
-                                    <div className="product-detail-content">
+                                    <div className="product-detail-content bg-white">
                                         <h2 className="product-detail-title">{product.title}</h2>
                                         <p className="product-detail-description">{product.description}</p>
                                         <a href="#" className="see-more-link">see more!</a>
                                     </div>
                                     ) : (
-                                    <div className="product-detail-image-container">
+                                    <div className={`product-detail-image-container ${isEven ? 'bg-burgundy' : 'bg-pink'}`}>
                                         <img
                                             src={product.image}
                                             alt={product.title}
