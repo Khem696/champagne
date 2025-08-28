@@ -1,0 +1,1 @@
+const a=g=>`/champagne/images/${g}`,n={HERO_BG:a("hero-bg.png"),LOGO_DARK:a("logoDarkBg1.png"),CHAMPAGNE_FLUTE:a("ChampagneFlute.png"),CHAMPAGNE_COUPE:a("ChampagneCoupe.png"),PRODUCT_IMAGE:a("product-image.png")};export{n as I};
