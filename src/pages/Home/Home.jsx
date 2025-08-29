@@ -72,7 +72,7 @@ const Home = () => {
                             aria-label="Next slide"
                         >
                         </button>
-                    </div>
+                    </div> 
                 </div>
             </section>
 

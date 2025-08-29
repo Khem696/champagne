@@ -18,7 +18,7 @@ const Header = () => {
             <div className="hamburger-line"></div>
             <div className="hamburger-line"></div>
           </div>
-          <span className="menu-text">Menu</span>
+          <span className="menu-text">CHAMPAGNE OFFICIAL</span>
         </button>
         <ul className={`nav-list ${menuOpen ? 'nav-open' : ''}`}>
           <li className="nav-item">
