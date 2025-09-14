@@ -10,7 +10,8 @@ import './App.css'
 const Home = lazy(() => import('./pages/Home/Home'))
 const About = lazy(() => import('./pages/About/About'))
 const Contact = lazy(() => import('./pages/Contact/Contact'))
-const AllProduct = lazy(() => import('./pages/Product/AllProduct')) 
+const AllProduct = lazy(() => import('./pages/Product/AllProduct'))
+const SubProduct = lazy(() => import('./pages/Product/SubProduct')) 
 
 // Lazy load admin pages
 const AdminLayout = lazy(() => import('./components/admin/AdminLayout'))
@@ -64,6 +65,7 @@ function App() {
                             <Route path="about" element={<About />} />
                             <Route path="contact" element={<Contact />} />
                             <Route path="products" element={<AllProduct />} />
+                            <Route path="products/:id" element={<SubProduct />} />
                         </Route>
 
                         {/* Catch all route */}

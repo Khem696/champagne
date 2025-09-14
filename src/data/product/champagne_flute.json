@@ -1,0 +1,12 @@
+{
+    "id": 1,
+    "title": "CHAMPAGNE FLUTE",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.",
+    "image": "/images/ChampagneFlute.png",
+    "features": [
+        "Tall elegant design",
+        "Preserves bubbles",
+        "Premium crystal glass",
+        "Perfect for special occasions"
+    ]
+}

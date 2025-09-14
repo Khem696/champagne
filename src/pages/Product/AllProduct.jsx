@@ -1,24 +1,16 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { IMAGES } from '../../utils/imageUtils';
+import champagneFluteData from '../../data/product/champagne_flute.json';
+import champagneCoupeData from '../../data/product/champagne_coupe.json';
 import './AllProduct.css';
 
-const productDetails = [
-    {
-        id: 1,
-        title: "CHAMPAGNE FLUTE",
-        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.",
-        image: IMAGES.PRODUCT_IMAGE,
-    },
-    {
-        id: 2,
-        title: "CHAMPAGNE COUPE",
-        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.",
-        image: IMAGES.PRODUCT_IMAGE,
-    }
-];
+// Load product data from JSON files
+const productDetails = [champagneFluteData, champagneCoupeData];
 
 const AllProduct = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const navigate = useNavigate();
 
     // Sample slider data - replace with your actual content
     const sliderContent = [
@@ -65,6 +57,13 @@ const AllProduct = () => {
         setCurrentSlide((prev) =>
             prev === sliderContent.length - 1 ? 0 : prev + 1
         );
+    };
+
+    const handleSeeMore = (product) => {
+        // Navigate to SubProduct page with product data
+        navigate(`/products/${product.id}`, { 
+            state: { productData: product } 
+        });
     };
 
     return (
@@ -163,7 +162,12 @@ const AllProduct = () => {
                                     <div className="product-detail-content bg-white">
                                         <h2 className="product-detail-title">{product.title}</h2>
                                         <p className="product-detail-description">{product.description}</p>
-                                        <a href="#" className="see-more-link">see more!</a>
+                                        <button 
+                                            onClick={() => handleSeeMore(product)} 
+                                            className="see-more-link"
+                                        >
+                                            see more!
+                                        </button>
                                     </div>
                                 )}
                             </div>
@@ -173,7 +177,12 @@ const AllProduct = () => {
                                     <div className="product-detail-content bg-white">
                                         <h2 className="product-detail-title">{product.title}</h2>
                                         <p className="product-detail-description">{product.description}</p>
-                                        <a href="#" className="see-more-link">see more!</a>
+                                        <button 
+                                            onClick={() => handleSeeMore(product)} 
+                                            className="see-more-link"
+                                        >
+                                            see more!
+                                        </button>
                                     </div>
                                 ) : (
                                     <div className={`product-detail-image-container ${isEven ? 'bg-burgundy' : 'bg-pink'}`}>
