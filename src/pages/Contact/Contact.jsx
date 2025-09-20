@@ -1,13 +1,14 @@
 import './Contact.css';
 import { ICONS } from '../../utils/iconUtils';
+import { IMAGES } from '../../utils/imageUtils';
 
 const Contact = () => (
     <div className="contact-wrapper">
         <section className="contact-hero">
-            <div className="contact-hero-bg" />
+            <div className="contact-hero-bg" style={{ backgroundImage: `url(${IMAGES.CONTACT_HERO_BG})` }} />
+            <div className="contact-hero-text">CONTACT US</div>
         </section>
         <section className="contact-content">
-            <h2 className="contact-title">CONTACT US</h2>
             <div className="contact-info">
                 <div className="tel">
                     <div className="tel-icon">

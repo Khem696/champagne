@@ -8,7 +8,7 @@ export const getImagePath = (imageName) => {
 
 // Common image paths
 export const IMAGES = {
-  HERO_BG: getImagePath('hero-bg.png'),
+  CONTACT_HERO_BG: getImagePath('contact_us_sign_hero_bg.png'),
   LOGO_DARK: getImagePath('logoDarkBg1.png'),
   CHAMPAGNE_FLUTE: getImagePath('ChampagneFlute.png'),
   CHAMPAGNE_COUPE: getImagePath('ChampagneCoupe.png'),

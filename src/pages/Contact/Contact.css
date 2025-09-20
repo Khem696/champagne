@@ -15,7 +15,7 @@
 
 .contact-hero {
   width: 100vw;
-  height: 260px;
+  min-height: 50vh;
   background: #4b2326;
   position: relative;
   display: flex;
@@ -23,13 +23,30 @@
   justify-content: center;
 }
 .contact-hero-bg {
-  width: 100vw;
-  height: 100%;
-  background: url('/hero-placeholder.jpg') center/cover no-repeat;
-  opacity: 0.3;
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
   z-index: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+.contact-hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-size: 2rem;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #fff;
+  text-align: center;
 }
 
 .contact-content {
@@ -43,7 +60,7 @@
   padding: 4rem 0 6rem 0;
 }
 
-.contact-title {
+/* .contact-title {
   font-size: 2rem;
   font-family: 'Georgia', serif;
   font-weight: bold;
@@ -51,7 +68,7 @@
   color: #181313;
   margin-bottom: 3rem;
   text-align: center;
-}
+} */
 
 .contact-info {
   display: flex;
@@ -139,7 +156,7 @@
 /* Tablet Styles */
 @media (max-width: 1024px) {
   .contact-hero {
-    height: 220px;
+    min-height: 85vh;
   }
 
   .contact-content {
@@ -176,7 +193,7 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
   .contact-hero {
-    height: 180px;
+    min-height: 75vh;
   }
 
   .contact-content {
@@ -224,7 +241,7 @@
 /* Small Mobile Styles */
 @media (max-width: 480px) {
   .contact-hero {
-    height: 150px;
+    min-height: 70vh;
   }
 
   .contact-content {
@@ -272,7 +289,7 @@
 /* Extra Small Mobile */
 @media (max-width: 360px) {
   .contact-hero {
-    height: 130px;
+    min-height: 65vh;
   }
 
   .contact-content {
