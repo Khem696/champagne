@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { IMAGES } from '../../utils/imageUtils';
+import { ICONS } from '../../utils/iconUtils';
 import './Home.css';
 
 
@@ -86,9 +87,9 @@ const Home = () => {
                             <h3>Champagne Flute</h3>
                         </div>
                     </div>
-                    {/* <div className="product-seperator">
-                        <div className="product-img placeholder-img" />
-                    </div> */}
+                    <div className="product-seperator">
+                        <img className="product-seperator-icon" src={ICONS.SPARKLING_ICON} alt="Sparkling Icon" />
+                    </div>
                     <div className="product-card">
                         <img className="product-img" src={IMAGES.CHAMPAGNE_COUPE} alt="Champagne Coupe" />
                         <div className="product-label">

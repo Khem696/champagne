@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IMAGES } from '../../utils/imageUtils';
+import { ICONS } from '../../utils/iconUtils';
 import champagneFluteData from '../../data/product/champagne_flute.json';
 import champagneCoupeData from '../../data/product/champagne_coupe.json';
 import './AllProduct.css';
@@ -125,20 +126,23 @@ const AllProduct = () => {
 
             {/* Products Section */}
             <section className="products-section">
-                <h2 className="section-title">CHAMPAGNE PRODUCTS</h2>
-                <div className="products-grid">
-                    {sliderContent.map((product) => (
-                        <div key={product.id} className="product-display">
-                            <div className="product-image-stand">
-                                <img
-                                    src={product.image}
-                                    alt={product.title}
-                                    className="product-image"
-                                />
-                            </div>
-                            <h3 className="product-title">{product.title}</h3>
+                <h2 className="products-title">CHAMPAGNE PRODUCTS</h2>
+                <div className="products-row">
+                    <div className="product-card">
+                        <img className="product-img" src={IMAGES.CHAMPAGNE_FLUTE} alt="Champagne Flute" />
+                        <div className="product-label">
+                            <h3>Champagne Flute</h3>
                         </div>
-                    ))}
+                    </div>
+                    <div className="product-seperator">
+                        <img className="product-seperator-icon" src={ICONS.SPARKLING_ICON} alt="Sparkling Icon" />
+                    </div>
+                    <div className="product-card">
+                        <img className="product-img" src={IMAGES.CHAMPAGNE_COUPE} alt="Champagne Coupe" />
+                        <div className="product-label">
+                            <h3>Champagne Coupe</h3>
+                        </div>
+                    </div>
                 </div>
             </section>
 

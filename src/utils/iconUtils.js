@@ -11,4 +11,5 @@ export const ICONS = {
   EMAIL_ICON: getIconPath('icon_Mail_Champagne.svg'),
   LINE_QR_ICON: getIconPath('qr_Line_Champagne.svg'),
   BOTTLE_ICON: getIconPath('bottleLogo.png'),
+  SPARKLING_ICON: getIconPath('Sparkling_Icon.svg'),
 };
