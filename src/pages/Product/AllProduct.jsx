@@ -48,6 +48,19 @@ const AllProduct = () => {
         return () => clearInterval(timer);
     }, []);
 
+    // Scroll to top when component mounts (when returning from product detail)
+    useEffect(() => {
+        const savedScrollPosition = sessionStorage.getItem('scrollPosition');
+        if (savedScrollPosition) {
+            // Restore the exact scroll position
+            window.scrollTo(0, parseInt(savedScrollPosition));
+            sessionStorage.removeItem('scrollPosition'); // Clear after use
+        } else {
+            // If no saved position, scroll to top
+            window.scrollTo(0, 0);
+        }
+    }, []);
+
     const handlePrevSlide = () => {
         setCurrentSlide((prev) =>
             prev === 0 ? sliderContent.length - 1 : prev - 1
@@ -61,9 +74,16 @@ const AllProduct = () => {
     };
 
     const handleSeeMore = (product) => {
-        // Navigate to SubProduct page with product data
+        // Store current scroll position before navigating
+        const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        sessionStorage.setItem('scrollPosition', currentScrollPosition.toString());
+        
+        // Navigate to SubProduct page with product data and source info
         navigate(`/products/${product.id}`, { 
-            state: { productData: product } 
+            state: { 
+                productData: product,
+                fromProducts: true 
+            } 
         });
     };
 
@@ -170,7 +190,7 @@ const AllProduct = () => {
                                             onClick={() => handleSeeMore(product)} 
                                             className="see-more-link"
                                         >
-                                            see more!
+                                           - see more -
                                         </button>
                                     </div>
                                 )}
@@ -185,7 +205,7 @@ const AllProduct = () => {
                                             onClick={() => handleSeeMore(product)} 
                                             className="see-more-link"
                                         >
-                                            see more!
+                                            - see more -
                                         </button>
                                     </div>
                                 ) : (

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { IMAGES } from '../../utils/imageUtils';
 import { ICONS } from '../../utils/iconUtils';
 import './Home.css';
@@ -6,6 +7,7 @@ import './Home.css';
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const navigate = useNavigate();
 
     const heroContent = [
         {
@@ -33,6 +35,16 @@ const Home = () => {
         return () => clearInterval(timer);
     },[]);
 
+    // Handle scroll position restoration when returning from product detail
+    useEffect(() => {
+        const savedScrollPosition = sessionStorage.getItem('scrollPosition');
+        if (savedScrollPosition) {
+            // Restore the exact scroll position
+            window.scrollTo(0, parseInt(savedScrollPosition));
+            sessionStorage.removeItem('scrollPosition'); // Clear after use
+        }
+    }, []);
+
     const handlePrevSlide = () => {
         setCurrentSlide((prev) =>
             prev === 0 ? heroContent.length - 1 : prev - 1
@@ -43,6 +55,20 @@ const Home = () => {
         setCurrentSlide((prev) =>
             prev === heroContent.length - 1 ? 0 : prev + 1
         );
+    };
+
+    const handleSeeMore = (product) => {
+        // Store current scroll position before navigating
+        const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        sessionStorage.setItem('scrollPosition', currentScrollPosition.toString());
+        
+        // Navigate to SubProduct page with product data and source info
+        navigate(`/products/${product.id}`, { 
+            state: { 
+                productData: product,
+                fromHome: true 
+            } 
+        });
     };
 
     return(
@@ -154,7 +180,12 @@ const Home = () => {
                                     <div className="product-detail-content bg-white">
                                         <h2 className="product-detail-title">{product.title}</h2>
                                         <p className="product-detail-description">{product.description}</p>
-                                        <a href="#" className="see-more-link">see more!</a>
+                                        <button 
+                                            onClick={() => handleSeeMore(product)} 
+                                            className="see-more-link"
+                                        >
+                                            - see more -
+                                        </button>
                                     </div>
                                 )}
                             </div>
@@ -164,7 +195,12 @@ const Home = () => {
                                     <div className="product-detail-content bg-white">
                                         <h2 className="product-detail-title">{product.title}</h2>
                                         <p className="product-detail-description">{product.description}</p>
-                                        <a href="#" className="see-more-link">see more!</a>
+                                        <button 
+                                            onClick={() => handleSeeMore(product)} 
+                                            className="see-more-link"
+                                        >
+                                            - see more -
+                                        </button>
                                     </div>
                                     ) : (
                                     <div className={`product-detail-image-container ${isEven ? 'bg-burgundy' : 'bg-pink'}`}>

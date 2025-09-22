@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import './SubProduct.css';
 
 const SubProduct = () => {
@@ -12,8 +13,26 @@ const SubProduct = () => {
         return null;
     }
 
+    // Scroll to top when component mounts
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const handleBackToProducts = () => {
-        navigate('/products');
+        // Check if user came from Home page or Products page
+        if (location.state?.fromProducts) {
+            navigate('/products');
+        } else if (location.state?.fromHome) {
+            navigate('/');
+        } else {
+            // Fallback: try to determine from referrer
+            const referrer = document.referrer;
+            if (referrer.includes('/products')) {
+                navigate('/products');
+            } else {
+                navigate('/');
+            }
+        }
     };
 
     return (

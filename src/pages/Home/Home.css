@@ -420,10 +420,16 @@ body, .home-wrapper {
     font-size: var(--text-xl);
     color: #5C1F1F;
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: none;
     text-transform: lowercase;
     letter-spacing: 1px;
     transition: color 0.2s;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    min-height: auto !important;
+    min-width: auto !important;
 }
 
 .see-more-link:hover {
