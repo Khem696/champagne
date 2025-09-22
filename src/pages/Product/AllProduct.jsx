@@ -51,12 +51,17 @@ const AllProduct = () => {
     // Scroll to top when component mounts (when returning from product detail)
     useEffect(() => {
         const savedScrollPosition = sessionStorage.getItem('scrollPosition');
+        console.log('Restoring scroll position:', savedScrollPosition);
         if (savedScrollPosition) {
-            // Restore the exact scroll position
-            window.scrollTo(0, parseInt(savedScrollPosition));
-            sessionStorage.removeItem('scrollPosition'); // Clear after use
+            // Add a small delay to ensure content is fully rendered
+            setTimeout(() => {
+                console.log('Scrolling to position:', parseInt(savedScrollPosition));
+                window.scrollTo(0, parseInt(savedScrollPosition));
+                sessionStorage.removeItem('scrollPosition'); // Clear after use
+            }, 100);
         } else {
             // If no saved position, scroll to top
+            console.log('No saved position, scrolling to top');
             window.scrollTo(0, 0);
         }
     }, []);
@@ -74,8 +79,11 @@ const AllProduct = () => {
     };
 
     const handleSeeMore = (product) => {
-        // Store current scroll position before navigating
-        const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        // Store current scroll position before navigating - use more reliable method
+        const currentScrollPosition = window.pageYOffset || 
+                                     document.documentElement.scrollTop || 
+                                     document.body.scrollTop || 0;
+        console.log('Saving scroll position:', currentScrollPosition);
         sessionStorage.setItem('scrollPosition', currentScrollPosition.toString());
         
         // Navigate to SubProduct page with product data and source info

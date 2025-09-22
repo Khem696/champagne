@@ -39,9 +39,11 @@ const Home = () => {
     useEffect(() => {
         const savedScrollPosition = sessionStorage.getItem('scrollPosition');
         if (savedScrollPosition) {
-            // Restore the exact scroll position
-            window.scrollTo(0, parseInt(savedScrollPosition));
-            sessionStorage.removeItem('scrollPosition'); // Clear after use
+            // Add a small delay to ensure content is fully rendered
+            setTimeout(() => {
+                window.scrollTo(0, parseInt(savedScrollPosition));
+                sessionStorage.removeItem('scrollPosition'); // Clear after use
+            }, 100);
         }
     }, []);
 
@@ -58,8 +60,10 @@ const Home = () => {
     };
 
     const handleSeeMore = (product) => {
-        // Store current scroll position before navigating
-        const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        // Store current scroll position before navigating - use more reliable method
+        const currentScrollPosition = window.pageYOffset || 
+                                     document.documentElement.scrollTop || 
+                                     document.body.scrollTop || 0;
         sessionStorage.setItem('scrollPosition', currentScrollPosition.toString());
         
         // Navigate to SubProduct page with product data and source info
