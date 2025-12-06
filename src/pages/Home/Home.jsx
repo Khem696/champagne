@@ -81,6 +81,7 @@ const Home = () => {
             <section className="hero-section">
                 <div className="hero-bg">
                     {/* Replace with actual hero image if available */}
+                    <img src={heroContent[currentSlide].backgroundImage} alt="hero-bg" />
                 </div>
                 <div className="hero-icon">
                     <img src={heroContent[currentSlide].icon} alt="hero-icon" />
