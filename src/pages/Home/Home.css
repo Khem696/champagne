@@ -83,7 +83,7 @@ body, .home-wrapper {
 .hero-text h2 {
   font-size: clamp(1.25rem, 5vw, 2rem); /* Fluid scaling from 20px to 32px */
   margin-bottom: var(--space-lg);
-  color: #333;
+  color:#ffffff;
   line-height: 1.4;
   word-wrap: break-word;
   overflow-wrap: break-word;
