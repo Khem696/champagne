@@ -1,0 +1,1 @@
+const e=n=>`/champagne/images/${n}`,t=n=>{if(!n)return"";const a=n.split("/").pop();return e(a)},g={CONTACT_HERO_BG:e("contact_us_sign_hero_bg.png"),LOGO_DARK:e("logoDarkBg1.png"),CHAMPAGNE_FLUTE:e("ChampagneFlute.png"),CHAMPAGNE_COUPE:e("ChampagneCoupe.png"),HERO_BG:e("cover_slide1.jpg")};export{g as I,t as r};

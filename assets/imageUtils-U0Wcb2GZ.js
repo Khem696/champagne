@@ -1,1 +1,0 @@
-const a=e=>`/champagne/images/${e}`,n={CONTACT_HERO_BG:a("contact_us_sign_hero_bg.png"),LOGO_DARK:a("logoDarkBg1.png"),CHAMPAGNE_FLUTE:a("ChampagneFlute.png"),CHAMPAGNE_COUPE:a("ChampagneCoupe.png"),HERO_BG:a("cover_slide1.jpg")};export{n as I};
