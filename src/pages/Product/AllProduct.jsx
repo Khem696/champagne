@@ -2,40 +2,19 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IMAGES } from '../../utils/imageUtils';
 import { ICONS } from '../../utils/iconUtils';
-import champagneFluteData from '../../data/product/champagne_flute.json';
-import champagneCoupeData from '../../data/product/champagne_coupe.json';
+import { productList } from '../../data/product';
 import './AllProduct.css';
 
-// Load product data from JSON files
-const productDetails = [champagneFluteData, champagneCoupeData];
+const productDetails = productList;
+
+const sliderContent = [
+  { id: 1, title: 'CHAMPAGNE FLUTE', description: ['Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum'], image: IMAGES.CHAMPAGNE_FLUTE },
+  { id: 2, title: 'CHAMPAGNE COUPE', description: ['Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum'], image: IMAGES.CHAMPAGNE_COUPE }
+];
 
 const AllProduct = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const navigate = useNavigate();
-
-    // Sample slider data - replace with your actual content
-    const sliderContent = [
-        {
-            id: 1,
-            title: "CHAMPAGNE FLUTE",
-            description: [
-                "Lorem ipsum",
-                "Lorem ipsum",
-                "Lorem ipsum"
-            ],
-            image: IMAGES.CHAMPAGNE_FLUTE
-        },
-        {
-            id: 2,
-            title: "CHAMPAGNE COUPE",
-            description: [
-                "Lorem ipsum",
-                "Lorem ipsum",
-                "Lorem ipsum"
-            ],
-            image: IMAGES.CHAMPAGNE_COUPE
-        }
-    ];
 
     // Auto-slide functionality
     useEffect(() => {
@@ -43,7 +22,7 @@ const AllProduct = () => {
             setCurrentSlide((prev) =>
                 prev === sliderContent.length - 1 ? 0 : prev + 1
             );
-        }, 5000); // Change slide every 5 seconds
+        }, 5000);
 
         return () => clearInterval(timer);
     }, []);
@@ -51,17 +30,12 @@ const AllProduct = () => {
     // Scroll to top when component mounts (when returning from product detail)
     useEffect(() => {
         const savedScrollPosition = sessionStorage.getItem('scrollPosition');
-        console.log('Restoring scroll position:', savedScrollPosition);
         if (savedScrollPosition) {
-            // Add a small delay to ensure content is fully rendered
             setTimeout(() => {
-                console.log('Scrolling to position:', parseInt(savedScrollPosition));
                 window.scrollTo(0, parseInt(savedScrollPosition));
-                sessionStorage.removeItem('scrollPosition'); // Clear after use
+                sessionStorage.removeItem('scrollPosition');
             }, 100);
         } else {
-            // If no saved position, scroll to top
-            console.log('No saved position, scrolling to top');
             window.scrollTo(0, 0);
         }
     }, []);
@@ -79,11 +53,9 @@ const AllProduct = () => {
     };
 
     const handleSeeMore = (product) => {
-        // Store current scroll position before navigating - use more reliable method
-        const currentScrollPosition = window.pageYOffset || 
-                                     document.documentElement.scrollTop || 
+        const currentScrollPosition = window.pageYOffset ||
+                                     document.documentElement.scrollTop ||
                                      document.body.scrollTop || 0;
-        console.log('Saving scroll position:', currentScrollPosition);
         sessionStorage.setItem('scrollPosition', currentScrollPosition.toString());
         
         // Navigate to SubProduct page with product data and source info

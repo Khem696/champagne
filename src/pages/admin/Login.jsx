@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../hooks/useAuth';
 import '../../styles/admin.css';
 
 const Login = () => {
@@ -44,7 +44,7 @@ const Login = () => {
             } else {
                 setError('Invalid credentials');
             }
-        } catch (err) {
+        } catch {
             setError('An error occurred during login');
         }
     };

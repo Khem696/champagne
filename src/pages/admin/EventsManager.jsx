@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import '../../styles/admin.css';
 
-export const EventsManager = () => {
-  const [events, setEvents] = useState([]);
+const EventsManager = () => {
+  const [events, _setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const handleAddEvent = () => {

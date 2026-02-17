@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import { Suspense, lazy } from 'react'
-import { AuthProvider } from './context/AuthContext'
+import { AuthProvider } from './context/AuthProvider'
 import ProtectedRoute from './components/admin/ProtectedRoute'
 import './styles/admin.css'
 import './styles/responsive.css'

@@ -1,12 +1,1 @@
-{
-    "id": 2,
-    "title": "CHAMPAGNE COUPE",
-    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.",
-    "image": "/images/ChampagneCoupe.png",
-    "features": [
-        "Elegant coupe design",
-        "Perfect for celebrations",
-        "Premium quality glass",
-        "Classic champagne experience"
-    ]
-}
+{"id":2,"title":"CHAMPAGNE COUPE","description":"A magical potion that deeply hydrates your skin, minimizes pores, and enhances your facial complexion. A perfect fusion of youthfulness and glow—just like a champagne coupe.","image":"/images/ChampagneCoupe.png","keyDetails":["Deeply hydrates skin","Minimizes pores","Enhances facial complexion","Youthfulness and glow"]}

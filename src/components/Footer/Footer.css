@@ -104,8 +104,14 @@
   flex-shrink: 0;
 }
 
-.footer-left a:hover,
-.footer-center a:hover {
+.footer-left a.footer-item,
+.footer-center a.footer-item {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-left a.footer-item:hover,
+.footer-center a.footer-item:hover {
   color: #ffe6ef;
   text-decoration: underline;
 }

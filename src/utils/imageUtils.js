@@ -1,9 +1,16 @@
 // Utility function to get the correct image path based on environment
 export const getImagePath = (imageName) => {
   // In development, use root path
-  // In production, use /champagne/ path for AWS S3 deployment
+  // In production, use /champagne/ path for GitHub Pages deployment
   const basePath = process.env.NODE_ENV === 'production' ? '/champagne' : '';
   return `${basePath}/images/${imageName}`;
+};
+
+// Resolve product image path from JSON (e.g. "/images/ChampagneFlute.png" -> correct path)
+export const resolveProductImage = (imagePath) => {
+  if (!imagePath) return '';
+  const filename = imagePath.split('/').pop();
+  return getImagePath(filename);
 };
 
 // Common image paths

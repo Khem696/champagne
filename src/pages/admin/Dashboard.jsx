@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../../styles/admin.css';
 
-export const Dashboard = () => {
+const Dashboard = () => {
   const [stats] = useState({
     totalEvents: 0,
     totalProducts: 0,

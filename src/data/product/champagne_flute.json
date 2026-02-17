@@ -1,12 +1,1 @@
-{
-    "id": 1,
-    "title": "CHAMPAGNE FLUTE",
-    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.",
-    "image": "/images/ChampagneFlute.png",
-    "features": [
-        "Tall elegant design",
-        "Preserves bubbles",
-        "Premium crystal glass",
-        "Perfect for special occasions"
-    ]
-}
+{"id":1,"title":"CHAMPAGNE FLUTE","description":"A magical potion that stimulates and revitalizes your face and scalp, reduces lipolysis, and conditions the skin. A blend of elegance and sophistication—just like a champagne flute.","image":"/images/ChampagneFlute.png","keyDetails":["Stimulates and revitalizes face and scalp","Reduces lipolysis","Conditions the skin","Elegance and sophistication"]}

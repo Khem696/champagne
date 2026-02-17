@@ -1,32 +1,20 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect, Fragment } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { IMAGES } from '../../utils/imageUtils';
 import { ICONS } from '../../utils/iconUtils';
+import { productList } from '../../data/product';
 import './Home.css';
 
+const heroContent = [
+  { id: 1, title: 'Introduction', backgroundImage: IMAGES.HERO_BG, icon: IMAGES.LOGO_DARK, text: 'Magical potion elegance and sophistication combined, just like a Champagne Flute glass' },
+  { id: 2, title: 'Introduction', backgroundImage: IMAGES.HERO_BG, icon: IMAGES.LOGO_DARK, text: 'Magical potion youthfulness and glow blended, just like a Champagne Coupe glass' }
+];
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const navigate = useNavigate();
 
-    const heroContent = [
-        {
-            id: 1,
-            title: "Introduction",
-            backgroundImage: IMAGES.HERO_BG,
-            icon: IMAGES.LOGO_DARK,
-            text: "Magical potion elegance and sophistication combined, just like a Champagne Flute glass.",
-        },
-        {
-            id: 2,
-            title: "Introduction",
-            backgroundImage: IMAGES.HERO_BG,
-            icon: IMAGES.LOGO_DARK,
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh eu feugiat nulla facilisisaliquam",
-        }
-    ];
-
-    useEffect (() => {
+    useEffect(() => {
         const timer = setInterval(()=>{
             setCurrentSlide((prev)=>
                 prev === heroContent.length - 1 ? 0 : prev + 1
@@ -112,21 +100,21 @@ const Home = () => {
             <section className="products-section">
                 <h2 className="products-title">CHAMPAGNE PRODUCTS</h2>
                 <div className="products-row">
-                    <div className="product-card">
-                        <img className="product-img" src={IMAGES.CHAMPAGNE_FLUTE} alt="Champagne Flute" />
-                        <div className="product-label">
-                            <h3>Champagne Flute</h3>
-                        </div>
-                    </div>
-                    <div className="product-seperator">
-                        <img className="product-seperator-icon" src={ICONS.SPARKLING_ICON} alt="Sparkling Icon" />
-                    </div>
-                    <div className="product-card">
-                        <img className="product-img" src={IMAGES.CHAMPAGNE_COUPE} alt="Champagne Coupe" />
-                        <div className="product-label">
-                            <h3>Champagne Coupe</h3>
-                        </div>
-                    </div>
+                    {productList.map((product, idx) => (
+                        <Fragment key={product.id}>
+                            {idx > 0 && (
+                                <div className="product-seperator">
+                                    <img className="product-seperator-icon" src={ICONS.SPARKLING_ICON} alt="Sparkling Icon" />
+                                </div>
+                            )}
+                            <Link to={`/products/${product.id}`} className="product-card">
+                                <img className="product-img" src={product.image} alt={product.title} />
+                                <div className="product-label">
+                                    <h3>{product.title}</h3>
+                                </div>
+                            </Link>
+                        </Fragment>
+                    ))}
                 </div>
             </section>
 
@@ -152,22 +140,9 @@ const Home = () => {
             </section>
             */}
 
-            {/* NEW PRODUCT DETAILS SECTION */}
+            {/* Product Details Section */}
             <section className="product-details-section">
-                {[
-                    {
-                        id: 1,
-                        title: "CHAMPAGNE FLUTE",
-                        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.",
-                        image: IMAGES.CHAMPAGNE_FLUTE
-                    },
-                    {
-                        id: 2,
-                        title: "CHAMPAGNE COUPE",
-                        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.",
-                        image: IMAGES.CHAMPAGNE_COUPE
-                    }
-                ].map((product, idx) => {
+                {productList.map((product, idx) => {
                     const isEven = idx % 2 === 0;
                     return (
                         <div key={product.id} className="product-detail-row split-row">

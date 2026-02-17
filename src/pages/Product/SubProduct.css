@@ -1,0 +1,300 @@
+/* SubProduct - consistent with About, Contact, Home */
+.sub-product-wrapper {
+  width: 100vw;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hero Section - matches About/Contact pattern */
+.sub-product-hero {
+  width: 100vw;
+  height: 260px;
+  background: #4b2326;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-product-hero-title {
+  font-size: 2rem;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Content Section - matches About/Contact pattern */
+.sub-product-content {
+  background: #fff;
+  width: 100vw;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0 6rem 0;
+}
+
+/* Product image - framed with shadow and border */
+.sub-product-image-frame {
+  text-align: center;
+  padding: var(--space-xl) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-product-image-frame img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  display: block;
+  background: rgba(255, 230, 230, 0.4);
+  border: 2px solid rgba(92, 31, 31, 0.2);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.sub-product-image-frame img:hover {
+  box-shadow: 0 8px 30px rgba(92, 31, 31, 0.15);
+}
+
+/* Description grid */
+.sub-product-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  padding: var(--space-lg) var(--space-md);
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Section labels */
+.sub-product-section-label {
+  font-size: var(--text-sm);
+  font-family: 'Georgia', serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #5C1F1F;
+  margin: 0 0 var(--space-md) 0;
+  text-transform: uppercase;
+}
+
+/* Description card - left accent, subtle background */
+.sub-product-description-card {
+  background: rgba(255, 230, 230, 0.25);
+  border-left: 4px solid #5C1F1F;
+  border-radius: 8px;
+  padding: var(--space-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.sub-product-description-card p {
+  line-height: 1.7;
+  color: #333;
+  font-size: var(--text-base);
+  font-family: 'Georgia', serif;
+  margin: 0;
+  text-align: left;
+  letter-spacing: 0.3px;
+}
+
+/* Features card */
+.sub-product-features-card {
+  background: rgba(255, 230, 230, 0.25);
+  border-left: 4px solid #5C1F1F;
+  border-radius: 8px;
+  padding: var(--space-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.sub-product-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sub-product-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  line-height: 1.6;
+  color: #333;
+  font-size: var(--text-base);
+  font-family: 'Georgia', serif;
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  border: 1px solid rgba(92, 31, 31, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sub-product-features li:last-child {
+  margin-bottom: 0;
+}
+
+.sub-product-features li:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(92, 31, 31, 0.08);
+}
+
+.sub-product-feature-sparkle {
+  color: #5C1F1F;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.sub-product-features li span:last-child {
+  flex: 1;
+}
+
+/* Back button */
+.sub-product-back-container {
+  text-align: center;
+  padding: var(--space-xl) 0 var(--space-xl) 0;
+  margin-top: var(--space-lg);
+}
+
+.sub-product-back-button {
+  background: #4b2326;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: var(--text-base);
+  font-family: 'Georgia', serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.sub-product-back-button:hover {
+  background: #5C1F1F;
+  color: #ffe6ef;
+  transform: translateY(-2px);
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .sub-product-hero {
+    height: 220px;
+  }
+
+  .sub-product-hero-title {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+  }
+
+  .sub-product-content {
+    padding: 3rem 2rem 5rem 2rem;
+  }
+
+  .sub-product-details {
+    gap: var(--space-lg);
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .sub-product-image-frame img {
+    max-width: 280px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .sub-product-hero {
+    height: 180px;
+  }
+
+  .sub-product-hero-title {
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+  }
+
+  .sub-product-content {
+    padding: 2.5rem 1.5rem 4rem 1.5rem;
+    min-height: 350px;
+  }
+
+  .sub-product-details {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .sub-product-image-frame img {
+    max-width: 250px;
+  }
+
+  .sub-product-back-container {
+    padding: var(--space-lg) 0;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .sub-product-hero {
+    height: 150px;
+  }
+
+  .sub-product-hero-title {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
+  .sub-product-content {
+    padding: 2rem 1rem 3rem 1rem;
+    min-height: 300px;
+  }
+
+  .sub-product-details {
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-xs);
+  }
+
+  .sub-product-description-card p,
+  .sub-product-features li {
+    font-size: var(--text-sm);
+  }
+
+  .sub-product-image-frame img {
+    max-width: 220px;
+  }
+
+  .sub-product-back-button {
+    padding: 0.5rem 1.5rem;
+    font-size: var(--text-sm);
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .sub-product-hero {
+    height: 130px;
+  }
+
+  .sub-product-hero-title {
+    font-size: 1.1rem;
+    letter-spacing: 0.8px;
+  }
+
+  .sub-product-content {
+    padding: 1.5rem 0.75rem 2.5rem 0.75rem;
+  }
+
+  .sub-product-details {
+    padding: var(--space-xs);
+  }
+
+  .sub-product-image-frame img {
+    max-width: 200px;
+  }
+}
