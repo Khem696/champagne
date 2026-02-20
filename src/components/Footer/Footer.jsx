@@ -36,7 +36,7 @@ const Footer = () => (
       </div>
     </div>
     <div className="footer-bottom">
-      <p>Distribute by © MedScan28</p>
+      <p>Distributed by © MedScan28</p>
     </div>
   </footer>
 )
