@@ -6,8 +6,8 @@ import { productList } from '../../data/product';
 import './Home.css';
 
 const heroContent = [
-  { id: 1, title: 'Introduction', backgroundImage: IMAGES.HERO_BG, icon: IMAGES.LOGO_DARK, text: 'Magical potion elegance and sophistication combined, just like a Champagne Flute glass' },
-  { id: 2, title: 'Introduction', backgroundImage: IMAGES.HERO_BG, icon: IMAGES.LOGO_DARK, text: 'Magical potion youthfulness and glow blended, just like a Champagne Coupe glass' }
+  { id: 1, title: 'Introduction', backgroundImage: IMAGES.HERO_BG, icon: IMAGES.LOGO_DARK, text: 'Magical potion elegance and sophistication combined, just like a Champagne.' },
+  { id: 2, title: 'Introduction', backgroundImage: IMAGES.HERO_BG, icon: IMAGES.LOGO_DARK, text: 'Magical potion elegance and sophistication combined, just like a Champagne.' }
 ];
 
 const Home = () => {
