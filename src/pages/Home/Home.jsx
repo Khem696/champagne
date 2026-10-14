@@ -201,15 +201,7 @@ const Home = () => {
             <section className="badges-section">
                 <div className="badges-row">
                     <div className="badge">
-                        <div className="badge-icon">🗸</div>
-                        <div className="badge-label">FDA APPROVED</div>
-                    </div>
-                    <div className="badge">
-                        <div className="badge-icon">🗸</div>
-                        <div className="badge-label">FDA APPROVED</div>
-                    </div>
-                    <div className="badge">
-                        <div className="badge-icon">🗸</div>
+                        <div className="badge-icon"><img src={ICONS.FDA_ICON} alt="FDA Icon" /></div>
                         <div className="badge-label">FDA APPROVED</div>
                     </div>
                 </div>

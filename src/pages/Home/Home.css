@@ -556,6 +556,13 @@ body, .home-wrapper {
   color: #4CAF50;
 }
 
+.badge-icon img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .badge-label {
   font-size: var(--text-lg);
   font-weight: 500;
@@ -666,6 +673,10 @@ body, .home-wrapper {
     padding: var(--space-lg) var(--space-md);
   }
 
+  .badge-icon img {
+    width: 240px;
+  }
+  
   .badge-label {
     font-size: var(--text-base);
   }
@@ -779,9 +790,14 @@ body, .home-wrapper {
   }
 
   .badges-row {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    justify-items: center;
     gap: var(--space-sm);
     padding: var(--space-sm);
+  }
+
+  .badge-icon img {
+    width: 180px;
   }
 
   .badge-label {
@@ -954,6 +970,10 @@ body, .home-wrapper {
     font-size: var(--text-xl);
   }
 
+  .badge-icon img {
+    width: 140px;
+  }
+
   .badge-label {
     font-size: var(--text-sm);
   }
@@ -1024,6 +1044,10 @@ body, .home-wrapper {
   .hero-text h2 {
     font-size: clamp(0.875rem, 4vw, 1.125rem); /* Fluid scaling from 14px to 18px */
     line-height: 1.3;
+  }
+
+  .badge-icon img {
+    width: 120px;
   }
 }
 
@@ -1109,6 +1133,10 @@ body, .home-wrapper {
 
   .badge-icon {
     font-size: var(--text-lg);
+  }
+
+  .badge-icon img {
+    width: 100px;
   }
 
   .badge-label {
