@@ -150,8 +150,16 @@ const AllProduct = () => {
             <section className="product-details-section">
                 {productDetails.map((product, idx) => {
                     const isEven = idx % 2 === 0;
+                    const rowBackground = isEven
+                        ? IMAGES.PRODUCT_DETAILS_UPPER_BG
+                        : IMAGES.PRODUCT_DETAILS_LOWER_BG;
+
                     return (
-                        <div key={product.id} className="product-detail-row split-row">
+                        <div
+                            key={product.id}
+                            className="product-detail-row split-row"
+                            style={{ '--product-detail-row-background': `url("${rowBackground}")` }}
+                        >
                             {/* Left Half */}
                             <div className="left-half">
                                 {isEven ? (

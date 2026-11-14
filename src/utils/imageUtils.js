@@ -22,4 +22,6 @@ export const IMAGES = {
   CHAMPAGNE_FAT: getImagePath('champagne-fat.png'),
   PRODUCT_IMAGE: getImagePath('product-image.png'),
   HERO_BG: getImagePath('cover_slide1.jpg'),
+  PRODUCT_DETAILS_UPPER_BG: getImagePath('Artboard_2.jpg'),
+  PRODUCT_DETAILS_LOWER_BG: getImagePath('Artboard_1.jpg'),
 };
