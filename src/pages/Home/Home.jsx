@@ -78,23 +78,24 @@ const Home = () => {
                 <div className="hero-text">
                     <h2>{heroContent[currentSlide].text}</h2>
                 </div>
-                {/* Slider Navigation */}
-                <div className="slider-navigation">
-                    <div className="slider-arrows">
-                        <button
-                            className="slider-arrow prev-arrow"
-                            onClick={handlePrevSlide}
-                            aria-label="Previous slide"
-                        >
-                        </button>
-                        <button
-                            className="slider-arrow next-arrow"
-                            onClick={handleNextSlide}
-                            aria-label="Next slide"
-                        >
-                        </button>
+                {PUBLIC_FEATURES.homeSliderArrows && (
+                    <div className="slider-navigation">
+                        <div className="slider-arrows">
+                            <button
+                                className="slider-arrow prev-arrow"
+                                onClick={handlePrevSlide}
+                                aria-label="Previous slide"
+                            >
+                            </button>
+                            <button
+                                className="slider-arrow next-arrow"
+                                onClick={handleNextSlide}
+                                aria-label="Next slide"
+                            >
+                            </button>
+                        </div> 
                     </div> 
-                </div>
+                )}
             </section>
 
             {/* Champagne Products Section */}
