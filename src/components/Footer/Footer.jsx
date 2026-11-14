@@ -3,6 +3,10 @@ import './Footer.css'
 import {ICONS} from '../../utils/iconUtils'
 import { PUBLIC_FEATURES } from '../../config/publicFeatures'
 
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+}
+
 const Footer = () => (
   <footer className="footer">
     <div className="footer-content">
@@ -11,8 +15,8 @@ const Footer = () => (
       </div>
       <div className="footer-main">
         <div className="footer-left">
-          <Link to="/" className="footer-item">Home</Link>
-          <Link to="/contact" className="footer-item">Contact us</Link>
+          <Link to="/" className="footer-item" onClick={scrollToTop}>Home</Link>
+          <Link to="/contact" className="footer-item" onClick={scrollToTop}>Contact us</Link>
           {PUBLIC_FEATURES.aboutPage && (
             <Link to="/about" className="footer-item">About Champagne</Link>
           )}

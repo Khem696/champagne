@@ -10,6 +10,11 @@ const Header = () => {
     setMenuOpen(!menuOpen)
   }
 
+  const handleNavigation = () => {
+    setMenuOpen(false)
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }
+
   return (
     <header className="header">
       <nav className="navbar">
@@ -26,7 +31,7 @@ const Header = () => {
             <NavLink
               to="/"
               className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-              onClick={() => setMenuOpen(false)}>
+              onClick={handleNavigation}>
               HOME
             </NavLink>
           </li>
@@ -35,7 +40,7 @@ const Header = () => {
               <NavLink
                 to="/products"
                 className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-                onClick={() => setMenuOpen(false)}>
+                onClick={handleNavigation}>
                 CHAMPAGNE PRODUCTS
               </NavLink>
             </li>
@@ -45,7 +50,7 @@ const Header = () => {
               <NavLink
                 to="/about"
                 className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-                onClick={() => setMenuOpen(false)}>
+                onClick={handleNavigation}>
                 ABOUT CHAMPAGNE
               </NavLink>
             </li>
@@ -54,7 +59,7 @@ const Header = () => {
             <NavLink
               to="/contact"
               className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-              onClick={() => setMenuOpen(false)}>
+              onClick={handleNavigation}>
               CONTACT US
             </NavLink>
           </li>
