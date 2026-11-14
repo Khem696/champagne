@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from 'react-
 import { Suspense, lazy } from 'react'
 import { AuthProvider } from './context/AuthProvider'
 import ProtectedRoute from './components/admin/ProtectedRoute'
+import { PUBLIC_FEATURES } from './config/publicFeatures'
 import './styles/admin.css'
 import './styles/responsive.css'
 import './App.css'
@@ -62,10 +63,16 @@ function App() {
                         {/* Public Routes */}
                         <Route path="/" element={<PublicLayout />}>
                             <Route index element={<Home />} />
-                            <Route path="about" element={<About />} />
+                            {PUBLIC_FEATURES.aboutPage && (
+                                <Route path="about" element={<About />} />
+                            )}
                             <Route path="contact" element={<Contact />} />
-                            <Route path="products" element={<AllProduct />} />
-                            <Route path="products/:id" element={<SubProduct />} />
+                            {PUBLIC_FEATURES.productPages && (
+                                <>
+                                    <Route path="products" element={<AllProduct />} />
+                                    <Route path="products/:id" element={<SubProduct />} />
+                                </>
+                            )}
                         </Route>
 
                         {/* Catch all route */}

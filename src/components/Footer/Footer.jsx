@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import './Footer.css'
 import {ICONS} from '../../utils/iconUtils'
+import { PUBLIC_FEATURES } from '../../config/publicFeatures'
 
 const Footer = () => (
   <footer className="footer">
@@ -12,12 +13,23 @@ const Footer = () => (
         <div className="footer-left">
           <Link to="/" className="footer-item">Home</Link>
           <Link to="/contact" className="footer-item">Contact us</Link>
-          <Link to="/about" className="footer-item">About Champagne</Link>
+          {PUBLIC_FEATURES.aboutPage && (
+            <Link to="/about" className="footer-item">About Champagne</Link>
+          )}
         </div>
         <div className="footer-center">
           <div className="footer-item footer-heading">CHAMPAGNE PRODUCTS</div>
-          <Link to="/products/1" className="footer-item">Champagne Flute</Link>
-          <Link to="/products/2" className="footer-item">Champagne Coupe</Link>
+          {PUBLIC_FEATURES.productPages ? (
+            <>
+              <Link to="/products/1" className="footer-item">Champagne Flute</Link>
+              <Link to="/products/2" className="footer-item">Champagne Coupe</Link>
+            </>
+          ) : (
+            <>
+              <div className="footer-item">Champagne Flute</div>
+              <div className="footer-item">Champagne Coupe</div>
+            </>
+          )}
         </div>
         <div className="footer-right">
           <div className="footer-item footer-contact-item">

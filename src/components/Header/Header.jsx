@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { PUBLIC_FEATURES } from '../../config/publicFeatures'
 import './Header.css'
 
 const Header = () => {
@@ -29,22 +30,26 @@ const Header = () => {
               HOME
             </NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink
-              to="/products"
-              className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-              onClick={() => setMenuOpen(false)}>
-              CHAMPAGNE PRODUCTS
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="/about"
-              className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-              onClick={() => setMenuOpen(false)}>
-              ABOUT CHAMPAGNE
-            </NavLink>
-          </li>
+          {PUBLIC_FEATURES.productPages && (
+            <li className="nav-item">
+              <NavLink
+                to="/products"
+                className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+                onClick={() => setMenuOpen(false)}>
+                CHAMPAGNE PRODUCTS
+              </NavLink>
+            </li>
+          )}
+          {PUBLIC_FEATURES.aboutPage && (
+            <li className="nav-item">
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+                onClick={() => setMenuOpen(false)}>
+                ABOUT CHAMPAGNE
+              </NavLink>
+            </li>
+          )}
           <li className="nav-item">
             <NavLink
               to="/contact"

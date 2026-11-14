@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { IMAGES } from '../../utils/imageUtils';
 import { ICONS } from '../../utils/iconUtils';
 import { productList } from '../../data/product';
+import { PUBLIC_FEATURES } from '../../config/publicFeatures';
 import './Home.css';
 
 const heroContent = [
@@ -107,12 +108,21 @@ const Home = () => {
                                     <img className="product-seperator-icon" src={ICONS.SPARKLING_ICON} alt="Sparkling Icon" />
                                 </div>
                             )}
-                            <Link to={`/products/${product.id}`} className="product-card">
-                                <img className="product-img" src={product.image} alt={product.title} />
-                                <div className="product-label">
-                                    <h3>{product.title}</h3>
+                            {PUBLIC_FEATURES.productPages ? (
+                                <Link to={`/products/${product.id}`} className="product-card">
+                                    <img className="product-img" src={product.image} alt={product.title} />
+                                    <div className="product-label">
+                                        <h3>{product.title}</h3>
+                                    </div>
+                                </Link>
+                            ) : (
+                                <div className="product-card">
+                                    <img className="product-img" src={product.image} alt={product.title} />
+                                    <div className="product-label">
+                                        <h3>{product.title}</h3>
+                                    </div>
                                 </div>
-                            </Link>
+                            )}
                         </Fragment>
                     ))}
                 </div>
@@ -168,12 +178,14 @@ const Home = () => {
                                     <div className="product-detail-content bg-white">
                                         <h2 className="product-detail-title">{product.title}</h2>
                                         <p className="product-detail-description">{product.description}</p>
-                                        <button 
-                                            onClick={() => handleSeeMore(product)} 
-                                            className="see-more-link"
-                                        >
-                                            - see more -
-                                        </button>
+                                        {PUBLIC_FEATURES.productPages && (
+                                            <button 
+                                                onClick={() => handleSeeMore(product)} 
+                                                className="see-more-link"
+                                            >
+                                                - see more -
+                                            </button>
+                                        )}
                                     </div>
                                 )}
                             </div>
@@ -183,12 +195,14 @@ const Home = () => {
                                     <div className="product-detail-content bg-white">
                                         <h2 className="product-detail-title">{product.title}</h2>
                                         <p className="product-detail-description">{product.description}</p>
-                                        <button 
-                                            onClick={() => handleSeeMore(product)} 
-                                            className="see-more-link"
-                                        >
-                                            - see more -
-                                        </button>
+                                        {PUBLIC_FEATURES.productPages && (
+                                            <button 
+                                                onClick={() => handleSeeMore(product)} 
+                                                className="see-more-link"
+                                            >
+                                                - see more -
+                                            </button>
+                                        )}
                                     </div>
                                     ) : (
                                     <div className={`product-detail-image-container ${isEven ? 'bg-burgundy' : 'bg-pink'}`}>
