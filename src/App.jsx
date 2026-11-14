@@ -25,11 +25,19 @@ const AdminLogin = lazy(() => import('./pages/admin/Login'))
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 
+const LoadingScreen = () => (
+    <div className="loading-screen">
+        <div className="loading-spinner"></div>
+    </div>
+)
+
 const PublicLayout = () => (
     <>
         <Header />
         <main className="main-content">
-            <Outlet />
+            <Suspense fallback={<LoadingScreen />}>
+                <Outlet />
+            </Suspense>
         </main>
         <Footer />
     </>
@@ -39,11 +47,7 @@ function App() {
     return (
         <AuthProvider>
             <Router basename={process.env.NODE_ENV === 'production' ? '/champagne' : '/'}>
-                <Suspense fallback={
-                    <div className="loading-screen">
-                        <div className="loading-spinner"></div>
-                    </div>
-                }>
+                <Suspense fallback={<LoadingScreen />}>
                     <Routes>
                         {/* Admin Routes */}
                         <Route path="/admin">
